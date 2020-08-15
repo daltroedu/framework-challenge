@@ -30,6 +30,7 @@ O projeto foi desenvolvido seguindo o padrão de projeto *application factories*
 │   │   ├── __init__.py
 │   │   ├── models.py
 │   │   └── rest_api
+│   │       ├── __init__.py
 │   │       ├── utils
 │   │       │   └── __init__.py
 │   │       └── v1
