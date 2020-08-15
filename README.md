@@ -351,7 +351,6 @@ Endpoint padrão para *dev*: `http://localhost:5000/api/v1/...`
         "created_at": "2020-08-15T08:51:41.608844",
         "user_id": 1,
         "id": 1,
-        "comments": [],
         "contents": "Este é o meu primeiro post",
         "images": [
             {
