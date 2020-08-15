@@ -1,0 +1,36 @@
+version: "3.7"
+
+services:
+  framework-challenge-db:
+    container_name: framework-challenge-db
+    image: postgres:12.2-alpine
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+      - ./scripts/create-multiple-postgres-databases.sh:/docker-entrypoint-initdb.d/create-multiple-postgres-databases.sh
+    networks:
+      - framework-challenge-network
+    ports:
+      - "5432:5432"
+    env_file:
+      - ./.env
+  framework-challenge-app:
+    container_name: framework-challenge-app
+    build: .
+    restart: always
+    volumes:
+      - .:/usr/src/project/
+    networks:
+      - framework-challenge-network
+    ports:
+      - "5000:5000"
+    environment:
+      - ENV_APP=${ENV_APP}
+      - SECRET_KEY=${SECRET_KEY}
+    depends_on:
+      - framework-challenge-db
+
+volumes:
+  postgres_data:
+networks:
+  framework-challenge-network:
