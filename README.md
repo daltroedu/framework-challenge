@@ -173,7 +173,7 @@ Endpoint padrão para *dev*: `http://localhost:5000/api/v1/...`
 
     Exemplo via Insomnia:
 
-    ![album_post](docs/imgs/album_post.png)
+    ![album_post](docs/imgs/album_post.jpg)
 
     Estrutura *Multipart Form*, para possibilitar POST de dados e imagens, com *Bearer Token* configurado utilizando token obtido via `/api/v1/login`.
 
